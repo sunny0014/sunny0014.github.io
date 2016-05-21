@@ -4,17 +4,45 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2015 | Sunny</title>
+  <title>pimple php的ioc容器 | Sunny</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sunny">
-<meta property="og:url" content="http://yoursite.com/archives/2015/index.html">
+  <meta name="description" content="pimple是一款很简单的php依赖注入容器,它实现了php的ArrayAccess的接口.很好地提高了程序的灵活性以及实现了对象的延迟加载.
+
+ArrayAccess是一个提供像访问数组一样访问对象的能力的接口.
+官方手册
+首先先建立一个container容器
+use Pimple\Container;
+
+$container = new Container();
+然后在容器中添加匿名函数
+//">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pimple php的ioc容器">
+<meta property="og:url" content="http://yoursite.com/2015/12/22/pimple的使用/index.html">
 <meta property="og:site_name" content="Sunny">
-<meta property="og:description">
+<meta property="og:description" content="pimple是一款很简单的php依赖注入容器,它实现了php的ArrayAccess的接口.很好地提高了程序的灵活性以及实现了对象的延迟加载.
+
+ArrayAccess是一个提供像访问数组一样访问对象的能力的接口.
+官方手册
+首先先建立一个container容器
+use Pimple\Container;
+
+$container = new Container();
+然后在容器中添加匿名函数
+//">
+<meta property="og:updated_time" content="2016-05-21T14:36:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sunny">
-<meta name="twitter:description">
+<meta name="twitter:title" content="pimple php的ioc容器">
+<meta name="twitter:description" content="pimple是一款很简单的php依赖注入容器,它实现了php的ArrayAccess的接口.很好地提高了程序的灵活性以及实现了对象的延迟加载.
+
+ArrayAccess是一个提供像访问数组一样访问对象的能力的接口.
+官方手册
+首先先建立一个container容器
+use Pimple\Container;
+
+$container = new Container();
+然后在容器中添加匿名函数
+//">
   
     <link rel="alternative" href="/atom.xml" title="Sunny" type="application/atom+xml">
   
@@ -162,111 +190,92 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-pimple的使用" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/12/22/pimple的使用/" class="archive-article-date">
-  	<time datetime="2015-12-22T15:51:07.000Z" itemprop="datePublished">Dec 22</time>
+    <div class="article-meta">
+      <a href="/2015/12/22/pimple的使用/" class="article-date">
+  	<time datetime="2015-12-22T15:51:07.000Z" itemprop="datePublished">2015-12-22</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/22/pimple的使用/">pimple php的ioc容器</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      pimple php的ioc容器
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>pimple是一款很简单的php依赖注入容器,它实现了php的ArrayAccess的接口.很好地提高了程序的灵活性以及实现了对象的延迟加载.</p>
+</blockquote>
+<p>ArrayAccess是一个提供像访问数组一样访问对象的能力的接口.</p>
+<h3 id="u5B98_u65B9_u624B_u518C"><a href="#u5B98_u65B9_u624B_u518C" class="headerlink" title="官方手册"></a><a href="http://php.net/manual/zh/class.arrayaccess.php" target="_blank" rel="external">官方手册</a></h3><hr>
+<p>首先先建立一个container容器</p>
+<pre><code>use Pimple\Container;
+
+$container = new Container();
+</code></pre><p>然后在容器中添加匿名函数</p>
+<pre><code>// define some services
+$container[&apos;session_storage&apos;] = function ($c) {
+    return new SessionStorage(&apos;SESSION_ID&apos;);
+};//自动调用offsetSet
+</code></pre><p>调用session对象</p>
+<pre><code>$session = $container[&apos;session&apos;];
+//会自动调用offsetGet
+//pimple重写了offsetGet,在生成对象的时候,将$this传入
+//$c=$this
+------------
+$raw = $this-&gt;values[$id];
+$val = $this-&gt;values[$id] = $raw($this);
+------------
+</code></pre>
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/12/21/Clousre/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PHP匿名函数</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/12/21/Clousre/" class="archive-article-date">
-  	<time datetime="2015-12-21T09:08:33.000Z" itemprop="datePublished">Dec 21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/21/Clousre/">PHP匿名函数</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/12/21/hello-world/" class="archive-article-date">
-  	<time datetime="2015-12-20T17:08:12.000Z" itemprop="datePublished">Dec 21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/21/hello-world/">Hello World</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
 
 </div>
       <footer id="footer">
@@ -292,8 +301,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
