@@ -102,7 +102,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/php/" style="font-size: 10px;">php</a>
+						<a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a>
 					</div>
 				</section>
 				
@@ -164,6 +164,144 @@
 
       <div class="body-wrap">
   
+    <article id="post-img-orientation" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/22/img-orientation/" class="article-date">
+  	<time datetime="2016-05-21T17:31:41.000Z" itemprop="datePublished">2016-05-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/22/img-orientation/">处理iPhone拍照的图片方向</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在处理一张用户上传的图片时,发现在PC的chrome和iPhone的safrai显示方向不一样,以下将讲述为何同一张图片在不同浏览器上的显示方向不一样.</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/22/img-orientation/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-shell-note" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/22/shell-note/" class="article-date">
+  	<time datetime="2016-05-21T16:54:45.000Z" itemprop="datePublished">2016-05-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/22/shell-note/">Shell笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="u547D_u4EE4_u6267_u884C_u7684_u987A_u5E8F"><a href="#u547D_u4EE4_u6267_u884C_u7684_u987A_u5E8F" class="headerlink" title="命令执行的顺序"></a>命令执行的顺序</h2><p>   1.执行使用绝对路径或相对路径执行的命令<br>   2.使用alias<br>   3.bash内部命令<br>   4.安装环境变量$Path的命令</p>
+<h2 id="shell_u57FA_u7840_u8BED_u6CD5"><a href="#shell_u57FA_u7840_u8BED_u6CD5" class="headerlink" title="shell基础语法"></a>shell基础语法</h2><h3 id="u5B9A_u4E49_u53D8_u91CF"><a href="#u5B9A_u4E49_u53D8_u91CF" class="headerlink" title="定义变量"></a>定义变量</h3><p>   variableName=”value”<br>   <font color="red">变量和等号之间不能有空格</font></p>
+<p>   经过定义的变量，只要在变量名前加上$就可使用</p>
+<pre><code>your_name=&quot;sun&quot;
+echo $your_name
+echo ${your_name}
+</code></pre><p>   大括号可要可不要，但是下面这种情况需要</p>
+<pre><code>for skill in Ada Coffe Action Java
+do
+echo &quot;I am good at ${skill}Script&quot;
+done
+</code></pre><p>使用 readonly 命令可以将变量定义为只读变量，只读变量的值不能被改变。</p>
+<pre><code>readonly variableName
+</code></pre><p>用unset可以删除变量</p>
+<pre><code>unset variableName
+</code></pre><h3 id="u53D8_u91CF_u7C7B_u578B"><a href="#u53D8_u91CF_u7C7B_u578B" class="headerlink" title="变量类型"></a>变量类型</h3><ul>
+<li>局部变量</li>
+<li>环境变量</li>
+<li>shell变量</li>
+</ul>
+<p>$表示当前shell的进程的ID，即pid</p>
+<pre><code>echo $$                    
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-pimple的使用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -193,27 +331,7 @@
         <blockquote>
 <p>pimple是一款很简单的php依赖注入容器,它实现了php的ArrayAccess的接口.很好地提高了程序的灵活性以及实现了对象的延迟加载.</p>
 </blockquote>
-<p>ArrayAccess是一个提供像访问数组一样访问对象的能力的接口.</p>
-<h3 id="u5B98_u65B9_u624B_u518C"><a href="#u5B98_u65B9_u624B_u518C" class="headerlink" title="官方手册"></a><a href="http://php.net/manual/zh/class.arrayaccess.php" target="_blank" rel="external">官方手册</a></h3><hr>
-<p>首先先建立一个container容器</p>
-<pre><code>use Pimple\Container;
-
-$container = new Container();
-</code></pre><p>然后在容器中添加匿名函数</p>
-<pre><code>// define some services
-$container[&apos;session_storage&apos;] = function ($c) {
-    return new SessionStorage(&apos;SESSION_ID&apos;);
-};//自动调用offsetSet
-</code></pre><p>调用session对象</p>
-<pre><code>$session = $container[&apos;session&apos;];
-//会自动调用offsetGet
-//pimple重写了offsetGet,在生成对象的时候,将$this传入
-//$c=$this
-------------
-$raw = $this-&gt;values[$id];
-$val = $this-&gt;values[$id] = $raw($this);
-------------
-</code></pre>
+<p>ArrayAccess是一个提供像访问数组一样访问对象的能力的接口.<br>
       
     </div>
     
@@ -226,6 +344,10 @@ $val = $this-&gt;values[$id] = $raw($this);
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/22/pimple的使用/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -269,61 +391,7 @@ $val = $this-&gt;values[$id] = $raw($this);
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>php从5.3即开始支持闭包函数,在项目中还是经常用到的</p>
-<p>##举个例子</p>
-<pre><code>$add = function($num1, $num2){
-    return $num1 + num2;
-};
-array_map($add, arr1, $arr2);
-</code></pre><p><strong>如果要用到上下文的变量,则需要使用use关键字</strong></p>
-<pre><code>$name = &apos;sunny&apos;;
-$func = function() use ($name){
-    echo &quot;my name is $name&quot;&quot;;
-};
-</code></pre><p>##手册中的例子<br>    一个基本的购物车，包括一些已经添加的商品和每种商品的数量。<br>    其中有一个方法用来计算购物车中所有商品的总价格，该方法使<br>    用了一个 closure 作为回调函数。</p>
-<pre><code>class Cart
-{
-    const PRICE_BUTTER  = 1.00;
-    const PRICE_MILK    = 3.00;
-    const PRICE_EGGS    = 6.95;
-    protected $products = array();
-
-    public function add($product, $quantity)
-    {
-        $this-&gt;products[$product] = $quantity;
-    }
-
-    public function getQuantity($product)
-    {
-        return isset($this-&gt;products[$product]) ? $this-&gt;products[$product] :FALSE;
-    }
-
-       public function getTotal($tax)
-       {
-        $total = 0.00;
-
-        $callback =
-        function ($quantity, $product) use ($tax, &amp;$total)
-        {
-            $pricePerItem = 
-            constant(__CLASS__ . 
-            &quot;::PRICE_&quot; . strtoupper($product));
-            $total += 
-            ($pricePerItem * $quantity) * ($tax + 1.0);
-        };
-        array_walk($this-&gt;products, $callback);
-        return round($total, 2);;
-        }
-    }
-$my_cart = new Cart;
-// 往购物车里添加条目
-$my_cart-&gt;add(&apos;butter&apos;, 1);
-$my_cart-&gt;add(&apos;milk&apos;, 3);
-$my_cart-&gt;add(&apos;eggs&apos;, 6);
-// 打出出总价格，其中有 5% 的销售税.
-print $my_cart-&gt;getTotal(0.05) . &quot;\n&quot;;
-// 最后结果是 54.29
-</code></pre>
+        <p>php从5.3即开始支持闭包函数,在项目中还是经常用到的<br>
       
     </div>
     
@@ -336,6 +404,10 @@ print $my_cart-&gt;getTotal(0.05) . &quot;\n&quot;;
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/21/Clousre/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
