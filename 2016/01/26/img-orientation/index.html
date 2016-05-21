@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/01/26/img-orientation/index.html">
 <meta property="og:site_name" content="Sunny">
 <meta property="og:description" content="在处理一张用户上传的图片时,发现在PC的chrome和iPhone的safrai显示方向不一样,以下将讲述为何同一张图片在不同浏览器上的显示方向不一样.">
-<meta property="og:updated_time" content="2016-05-21T17:59:18.000Z">
+<meta property="og:updated_time" content="2016-05-21T18:00:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="处理iPhone拍照的图片方向">
 <meta name="twitter:description" content="在处理一张用户上传的图片时,发现在PC的chrome和iPhone的safrai显示方向不一样,以下将讲述为何同一张图片在不同浏览器上的显示方向不一样.">
@@ -202,8 +202,9 @@
       
         <p>在处理一张用户上传的图片时,发现在PC的chrome和iPhone的safrai显示方向不一样,以下将讲述为何同一张图片在不同浏览器上的显示方向不一样.</p>
 <a id="more"></a>
-<p>   用手机或者其他数码产品拍照时,会以各种方向拿着手机,这样是如何保证在后来查看照片时,照片都以正确的方式显示在相册里?<br>   现在手机中都会有方向传感器,在拍照时,它会将手机的旋转角度等信息存储在照片中,然后相机就可以按照这个角度来显示图片.<br>    然而在不同的设备上,或者不同的浏览器上,对图片的旋转信息的处理方式都是不一样的,就好导致在不同设备或者不同浏览器上所看的图片方向不一致,出现偏差.<br>    所以,我在用户将相片上传的时候,将图片旋转至正确的角度,再将处理完的图片上传.<br>    代码如下:<br>        //先获取图片的exif信息</p>
-<pre><code>$exif = exif_read_data($_tmp_name);
+<p>   用手机或者其他数码产品拍照时,会以各种方向拿着手机,这样是如何保证在后来查看照片时,照片都以正确的方式显示在相册里?<br>   现在手机中都会有方向传感器,在拍照时,它会将手机的旋转角度等信息存储在照片中,然后相机就可以按照这个角度来显示图片.<br>    然而在不同的设备上,或者不同的浏览器上,对图片的旋转信息的处理方式都是不一样的,就好导致在不同设备或者不同浏览器上所看的图片方向不一致,出现偏差.<br>    所以,我在用户将相片上传的时候,将图片旋转至正确的角度,再将处理完的图片上传.<br>    代码如下:</p>
+<pre><code>    //先获取图片的exif信息
+$exif = exif_read_data($_tmp_name);
         $orientation = isset($exif[&apos;Orientation&apos;]) ? $exif[&apos;Orientation&apos;] : null;
    // 如果存储了角度信息,则进行处理
         if (!empty($orientation)) {
